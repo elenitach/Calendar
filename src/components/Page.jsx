@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './Button';
+import Calendar from './Calendar/Calendar';
 
 const StyledPage = styled.div`
   @media (min-width: 740px) {
@@ -28,6 +29,7 @@ const Page = () => {
         <Title>Interview Calendar</Title>
         <Button variant='add' />
       </Header>
+      <Calendar />
     </StyledPage>
   );
 }
