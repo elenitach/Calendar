@@ -2,7 +2,16 @@
   --section-color: #F6F6F6;
   --border-color: #E6E6E6;
   --active-color: #FF3131;
+  --text-secondary-color: #D1D1D1;
+  --filled-cell-color: #EBECFF;
+  --selected-cell-color: #B3B7FF;
   box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
 }
 
 body {

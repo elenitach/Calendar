@@ -12,12 +12,11 @@ const WeekDay = styled.div`
 `;
 
 const MonthDay = styled.div`
-  width: 29px;  
+  width: 38px;
   padding: 5px;
   border-radius: 100%;
   font-size: 1.5rem;
   text-align: center;
-  cursor: pointer;
 `;
 
 const MonthDayActive = styled(MonthDay)`
@@ -25,14 +24,14 @@ const MonthDayActive = styled(MonthDay)`
   color: white;
 `;
 
-const Day = ({ weekDay, monthDay, isActive, onDateChange }) => {
+const Day = ({ weekDay, monthDay, isActive }) => {
   return (
     <StyledDay>
       <WeekDay>{weekDay}</WeekDay>
       {
         isActive ? 
         <MonthDayActive>{monthDay}</MonthDayActive> : 
-        <MonthDay onClick={onDateChange}>{monthDay}</MonthDay>
+        <MonthDay>{monthDay}</MonthDay>
       }
     </StyledDay>
   );
