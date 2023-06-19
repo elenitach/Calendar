@@ -11,7 +11,7 @@ const StyledMain = styled.div`
 const Labels = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 45.3px;
+  row-gap: 46px;
   margin: 5px;
   color: var(--text-secondary-color);
   font-size: 1.3rem;
