@@ -3,6 +3,7 @@ import Button from './Button';
 import Calendar from './Calendar/Calendar';
 import { useState } from 'react';
 import { parseDateString } from '../helpers';
+import { data } from '../data';
 
 const StyledPage = styled.div`
   @media (min-width: 740px) {
@@ -25,7 +26,7 @@ const Title = styled.h1`
 `;
 
 const Page = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(data);
   const handleAddEventClick = () => {
     const dateString = prompt('Enter event time:\nYYYY-MM-DD HH:mm:ss');
     const event = parseDateString(dateString);
@@ -44,13 +45,18 @@ const Page = () => {
       alert('Incorrect date format');
     }
   }
+
+  const handleEventDelete = (event) => {
+    setEvents(events.filter(e => e !== event));
+  }
+
   return (
     <StyledPage>
       <Header>
         <Title>Interview Calendar</Title>
         <Button variant='add' onClick={handleAddEventClick} />
       </Header>
-      <Calendar events={events} />
+      <Calendar events={events} onEventDelete={handleEventDelete} />
     </StyledPage>
   );
 }

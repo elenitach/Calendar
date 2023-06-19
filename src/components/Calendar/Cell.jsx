@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const StyledCell = styled.td`
-  min-width: 80px;
   height: 70px;
   padding: 3px;
   border: 2px solid var(--border-color);
+  ${props => props.lastRow && 'border-bottom: none'}
 `;
 
 const CellContent = styled.div`
@@ -13,12 +13,15 @@ const CellContent = styled.div`
   background-color: ${
     props => props.variant === 'filled' ? 
     'var(--filled-cell-color)' : 
-    'var(--selected-cell-color)'}
+    'var(--selected-cell-color)'};
+  ${props => props.variant && 'cursor: pointer'};
 `;
 
-const Cell = ({ variant }) => {
+const Cell = ({ variant, onClick, lastRow }) => {
   return (
-    <StyledCell>{variant && <CellContent variant={variant} />}</StyledCell>
+    <StyledCell onClick={onClick} lastRow={lastRow}>
+      {variant && <CellContent variant={variant} />}
+    </StyledCell>
   );
 }
 

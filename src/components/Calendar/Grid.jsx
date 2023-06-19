@@ -7,12 +7,12 @@ const StyledGrid = styled.table`
   border-collapse: collapse;
 `;
 
-const Grid = ({ events, currentWeekDates }) => {
+const Grid = ({ events, currentWeekDates, selectedEvent, onEventSelect }) => {
   const rows = [];
   const rowsCount = 24;
   const columnsCount = 7;
 
-  const hasEvent = (rowIdx, colIdx) => {
+  const cellEvent = (rowIdx, colIdx) => {
     const date = currentWeekDates[colIdx];
     for (const event of events) {
       if (
@@ -21,17 +21,31 @@ const Grid = ({ events, currentWeekDates }) => {
         event.getFullYear() === date.getFullYear() &&
         event.getHours() === rowIdx
       ) {
-        return true;
+        return event;
       }
     }
-    return false;
+    return null;
   }
 
   for (let i = 0; i < rowsCount; i++) {
     const row = [];
     for (let j = 0; j < columnsCount; j++) {
+      const event = cellEvent(i, j);
+      let variant;
+      if (event) {
+        if (event === selectedEvent) {
+          variant = 'selected';
+        } else {
+          variant = 'filled';
+        }
+      }
       row.push(
-        <Cell key={i * rowsCount + j} variant={hasEvent(i, j) ? 'filled' : ''} />
+        <Cell 
+          key={i * rowsCount + j} 
+          variant={variant} 
+          onClick={() => onEventSelect(event)}
+          lastRow={i === rowsCount - 1}
+        />
       );
     }
     rows.push(<tr>{row}</tr>);

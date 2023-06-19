@@ -5,10 +5,14 @@ import Button from "../Button";
 import { months, weekDays } from "../../helpers";
 
 const StyledHeader = styled.header`
-  padding: 20px 33px 20px 102px;
+  padding: 20px 33px 20px 96px;
   background-color: var(--section-color);
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
+  @media (max-width: 600px) {
+    padding-left: 70px;
+    padding-right: 10px;
+  }
 `;
 
 const Month = styled.div`

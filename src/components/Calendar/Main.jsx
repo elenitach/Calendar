@@ -3,7 +3,7 @@ import Grid from "./Grid";
 
 const StyledMain = styled.div`
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 390px);
   overflow: auto;
   scrollbar-width: none;
 `;
@@ -11,13 +11,13 @@ const StyledMain = styled.div`
 const Labels = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 46px;
+  row-gap: 45.3px;
   margin: 5px;
   color: var(--text-secondary-color);
   font-size: 1.3rem;
 `;
 
-const Main = ({ events, currentWeekDates }) => {
+const Main = ({ events, currentWeekDates, selectedEvent, onEventSelect }) => {
   return (
     <StyledMain>
       <Labels>
@@ -27,7 +27,12 @@ const Main = ({ events, currentWeekDates }) => {
           })
         }
       </Labels>
-      <Grid events={events} currentWeekDates={currentWeekDates} />
+      <Grid 
+        events={events} 
+        currentWeekDates={currentWeekDates} 
+        selectedEvent={selectedEvent}
+        onEventSelect={onEventSelect}
+      />
     </StyledMain>
   );
 }

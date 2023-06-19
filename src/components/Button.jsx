@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  font-size: 1.3rem;
 `;
 
 const StyledAddButton = styled(StyledButton)`
