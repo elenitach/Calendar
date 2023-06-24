@@ -10,6 +10,7 @@ const Page = () => {
   const [events, setEvents] = useState(data);
   const handleAddEventClick = () => {
     const dateString = prompt('Enter event time:\nYYYY-MM-DD HH:mm:ss');
+    if (!dateString) return;
     const event = parseDateString(dateString);
     if (event) {
       setEvents([event, ...events.filter(
