@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import Button from './Button';
 import Calendar from './Calendar/Calendar';
 import { useState } from 'react';
-import { parseDateString } from '../helpers';
-import { data } from '../data';
+import { parseDateString } from '../helpers/helpers';
+import { data } from '../data/data';
 
 const StyledPage = styled.div`
   @media (min-width: 740px) {

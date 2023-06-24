@@ -2,7 +2,7 @@ import Week from "./Week";
 import Day from "./Day";
 import styled from "styled-components";
 import Button from "../Button";
-import { months, weekDays } from "../../helpers";
+import { months, weekDays } from "../../helpers/helpers";
 
 const StyledHeader = styled.header`
   padding: 20px 33px 20px 96px;
