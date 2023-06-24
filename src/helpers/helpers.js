@@ -12,6 +12,7 @@ export const addDays = (date, daysCount) => {
 }
 
 export const parseDateString = (dateString) => {
+  if (!dateString) return null;
   const timestamp = Date.parse(dateString.replace(' ', 'T'));
   if (isNaN(timestamp)) {
     return null;
