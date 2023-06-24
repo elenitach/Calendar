@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { addDays } from "../../helpers/helpers";
 import Header from "./Header";
 import Main from "./Main";
-import { addDays } from "../../helpers/helpers";
 import Footer from "./Footer";
 
 const Calendar = ({ events, onEventDelete }) => {
