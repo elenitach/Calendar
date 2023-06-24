@@ -1,7 +1,7 @@
 import Week from "./Week";
 import Day from "./Day";
 import styled from "styled-components";
-import Button from "../Button";
+import Button from "../Button/Button";
 import { months, weekDays } from "../../helpers/helpers";
 
 const StyledHeader = styled.header`

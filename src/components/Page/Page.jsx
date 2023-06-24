@@ -1,29 +1,10 @@
-import styled from 'styled-components';
-import Button from './Button';
-import Calendar from './Calendar/Calendar';
 import { useState } from 'react';
-import { parseDateString } from '../helpers/helpers';
-import { data } from '../data/data';
+import { parseDateString } from '../../helpers/helpers';
+import { data } from '../../data/data';
+import Button from '../Button/Button';
+import Calendar from '../Calendar/Calendar';
+import * as S from './styles';
 
-const StyledPage = styled.div`
-  @media (min-width: 740px) {
-    width: 740px;
-  }
-  margin: 0 auto;
-`;
-
-const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
-`;
-
-const Title = styled.h1`
-  margin: 0;
-  padding: 0;
-  font-size: 2rem;
-  font-weight: normal;
-`;
 
 const Page = () => {
   const [events, setEvents] = useState(data);
@@ -51,13 +32,13 @@ const Page = () => {
   }
 
   return (
-    <StyledPage>
-      <Header>
-        <Title>Interview Calendar</Title>
+    <S.StyledPage>
+      <S.Header>
+        <S.Title>Interview Calendar</S.Title>
         <Button variant='add' onClick={handleAddEventClick} />
-      </Header>
+      </S.Header>
       <Calendar events={events} onEventDelete={handleEventDelete} />
-    </StyledPage>
+    </S.StyledPage>
   );
 }
 

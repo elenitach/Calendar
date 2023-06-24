@@ -1,5 +1,5 @@
 import 'core-js/actual';
-import Page from './components/Page';
+import Page from './components/Page/Page';
 
 function App() {
   return (
